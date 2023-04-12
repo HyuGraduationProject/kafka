@@ -13,6 +13,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# export JMX_PORT=9999
+
+# export KAFKA_JMX_OPTS='-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dcom.sun.management.jmxremote.rmi.port=9999'
 
 if [ $# -lt 1 ];
 then
@@ -40,5 +43,6 @@ case $COMMAND in
   *)
     ;;
 esac
+export KAFKA_OPTS="-javaagent:/Users/san9w9n/kafka/prometheus/jmx_prometheus_javaagent-0.12.0.jar=7071:/Users/san9w9n/kafka/prometheus/kafka-2_0_0.yml"
 
 exec $base_dir/kafka-run-class.sh $EXTRA_ARGS kafka.Kafka "$@"

@@ -13,7 +13,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+export KAFKA_OPTS="-javaagent:/Users/san9w9n/kafka/prometheus/jmx_prometheus_javaagent-0.12.0.jar=7073:/Users/san9w9n/kafka/prometheus/kafka-2_0_0.yml"
 if [ "x$KAFKA_HEAP_OPTS" = "x" ]; then
     export KAFKA_HEAP_OPTS="-Xmx512M"
 fi
